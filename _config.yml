@@ -1,0 +1,56 @@
+# Site settings
+title: Nicole Santora
+email: nic.santora@gmail.com
+description: ""
+baseurl: ""
+url: "http://localhost:4000"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+include: [
+  ".htaccess"
+  ]
+exclude: [
+  "*.git",
+  "*.gitignore",
+  "CNAME",
+  "*.scss-cache",
+  "readme.md",
+  "node_modules",
+  "Gruntfile.js",
+  "package.json",
+  "bower_components",
+  "bower.json",
+  "js/app.js",
+  ]
+prose:
+  rooturl: '_posts'
+  siteurl: 'http://bigbeeks.github.io'
+  media: 'assets/images'
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "hidden"
+          value: ""
+      - name: "date"
+        field:
+            element: "text"
+            label: "Date (YYYY-MM-DD)"
+            value: ""
+      - name: "author"
+        field:
+            element: "text"
+            label: "Please enter the author's name."
+            value: ""
+      - name: "excerpt"
+        field:
+            element: "text"
+            label: "Give a brief description of your blog post."
+            value: ""
