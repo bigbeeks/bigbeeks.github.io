@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-  
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -23,71 +22,84 @@ module.exports = function(grunt) {
         }
     },
 
-
-    livereloadx: {
-      static: true,
-      dir: '.'
-    },
-
-    watch: {
-      jekyll: {
-        files: ['**/*.html', '**/*.md', '_layouts/*.html', '_posts/*.md', 'scss/*.scss', 'css/*.css', 'scripts/*.js', 'images/*'],
-        tasks: ['shell:jekyll_build']
-      }
-    },
-
     connect: {
       server: {
         options: {
-          port: '4000',
-          hostname: '10.0.1.5',
+          port: 4000,
           base: '_site'
         }
       }
     },
-
+/*
+    uncss: {
+      dist: {
+        options: {
+          csspath:
+            'http://localhost:4000/css/styles.css',
+        }
+        files: {
+          'css/tidy.css'
+        }
+      }
+    },
+*/
    uglify: {
      my_target: {
        files: {
          'js/uglified/output.min.js': [
            'bower_components/jquery/dist/jquery.min.js',
            'bower_components/foundation/js/foundation.min.js',
-           'bower_components/foundation/js/foundation.interchange.js',
            'bower_components/modernizr/modernizr.js',
+           'js/foundation.js',
+           'js/foundation.interchange.js',
            'js/app.js'
          ]
        }
      }
    },
 
+    // penthouse: {
+    //   extract: {
+    //       outfile : '_includes/test.css',
+    //       css : 'css/styles.css',
+    //       url : 'http://localhost:4000',
+    //       width : 1300,
+    //       height : 900
+    //     }
+    //   },
+
     watch: {
       grunt: { files: ['Gruntfile.js'] },
-
-  all: {
-            files: '**/*.html',
-            options: {
-                livereload: true
-        }
-    },
-
-
       sass: {
         files: 'scss/**/*.scss',
         tasks: ['sass']
       },
+/*
+      uncss: {
+        files: 'css/*.css',
+        tasks: ['uncss']
+      },
+*/
       uglify: {
         files: 'js/*.js',
         tasks: ['uglify']
       },
+      // penthouse: {
+      //   files: 'css/*.css',
+      //   tasks: ['penthouse']
+      // },
       livereload: {
         files: [
           '_config.yml',
           'index.html',
+          'about-us/index.html',
+          'case-studies/index.html',
+          'contact-us/index.html',
+          'privacy-policy/index.html',
           '_layouts/**',
-          '_posts/*.md',
+          '_posts/**',
           '_includes/**',
-          'scss/**/*.scss',
-          'assets/**'
+          'scss/**/*.scss'
         ],
         tasks: ['shell:jekyllBuild'],
         options: {
@@ -101,19 +113,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-processhtml');
+  //grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  // grunt.loadNpmTasks('livereloadx');
-
+  // grunt.loadNpmTasks('grunt-penthouse');
 
   grunt.registerTask('build', [
     'sass',
-    'uglify'
+    'uglify',
+    // 'penthouse'
+    //'uncss'
   ]);
   grunt.registerTask('default', [
     'shell',
     'build',
-    // 'livereloadx',
     'connect',
     'watch'
   ]);
