@@ -26,9 +26,9 @@ exclude: [
   "js/app.js",
   ]
 prose:
-  rooturl: '/_posts'
+  rooturl: '_posts'
   siteurl: 'http://bigbeeks.github.io'
-  media: '/assets/images'
+  media: 'assets/images'
   metadata:
     _posts:
       - name: "layout"
