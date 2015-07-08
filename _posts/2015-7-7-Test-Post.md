@@ -1,4 +1,9 @@
-#Blog
+---
+layout: post
+title:  "The inaugural blog post"
+date:   2015-07-07 22:55:57
+categories: jekyll update
+---
 
 I’ve started to write this inaugural blog post over and over again in Google drive (or is it Google docs?) over the past three years. I usually get to a point of self satisfaction (which is about two paragraphs of carefully crafted text), then rush to share it with my husband who  says something sweet and encouraging like “you should write more”, and I never touch it again. For the past four months, my four-month-old son has been the reason I never finish anything (a movie, a sandwich, or a blog post). But here it is--raggedy and rambling--enjoy!
 
