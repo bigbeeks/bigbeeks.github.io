@@ -1,10 +1,9 @@
 # Site settings
 title: Nicole Santora
 email: nic.santora@gmail.com
-description: "Blog of Nicole Santora"
-baseurl: "http:localhost:4000"
-url: "http:localhost:4000"
-host: "http:localhost:4000"
+description: ""
+baseurl: ""
+url: "http://10.0.1.5:4000"
 
 # Build settings
 markdown: kramdown
@@ -45,13 +44,13 @@ prose:
             element: "text"
             label: "Date (YYYY-MM-DD)"
             value: ""
-      # - name: "author"
-      #   field:
-      #       element: "text"
-      #       label: "Please enter the author's name."
-      #       value: ""
-      # - name: "excerpt"
-      #   field:
-      #       element: "text"
-      #       label: "Give a brief description of your blog post."
-      #       value: ""
+      - name: "author"
+        field:
+            element: "text"
+            label: "Please enter the author's name."
+            value: ""
+      - name: "excerpt"
+        field:
+            element: "text"
+            label: "Give a brief description of your blog post."
+            value: ""

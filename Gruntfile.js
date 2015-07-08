@@ -30,7 +30,19 @@ module.exports = function(grunt) {
         }
       }
     },
-
+/*
+    uncss: {
+      dist: {
+        options: {
+          csspath:
+            'http://localhost:4000/css/styles.css',
+        }
+        files: {
+          'css/tidy.css'
+        }
+      }
+    },
+*/
    uglify: {
      my_target: {
        files: {
@@ -46,6 +58,15 @@ module.exports = function(grunt) {
      }
    },
 
+    // penthouse: {
+    //   extract: {
+    //       outfile : '_includes/test.css',
+    //       css : 'css/styles.css',
+    //       url : 'http://localhost:4000',
+    //       width : 1300,
+    //       height : 900
+    //     }
+    //   },
 
     watch: {
       grunt: { files: ['Gruntfile.js'] },
@@ -53,12 +74,20 @@ module.exports = function(grunt) {
         files: 'scss/**/*.scss',
         tasks: ['sass']
       },
-
+/*
+      uncss: {
+        files: 'css/*.css',
+        tasks: ['uncss']
+      },
+*/
       uglify: {
         files: 'js/*.js',
         tasks: ['uglify']
       },
-
+      // penthouse: {
+      //   files: 'css/*.css',
+      //   tasks: ['penthouse']
+      // },
       livereload: {
         files: [
           '_config.yml',
@@ -74,7 +103,7 @@ module.exports = function(grunt) {
         ],
         tasks: ['shell:jekyllBuild'],
         options: {
-          livereload: false
+          livereload: true
         }
       }
     }
@@ -102,4 +131,3 @@ module.exports = function(grunt) {
   ]);
 
 };
-
