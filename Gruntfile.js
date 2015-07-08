@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
     watch: {
       jekyll: {
-        files: ['**/*.html', '**/*.md', '_layouts/*.html', 'scss/*.scss', 'css/*.css', 'scripts/*.js', 'images/*'],
+        files: ['**/*.html', '**/*.md', '_layouts/*.html', '_posts/*.md', 'scss/*.scss', 'css/*.css', 'scripts/*.js', 'images/*'],
         tasks: ['shell:jekyll_build']
       }
     },
@@ -83,12 +83,8 @@ module.exports = function(grunt) {
         files: [
           '_config.yml',
           'index.html',
-          'about/index.html',
-          'portfolio/**',
-          'contact/index.html',
-          'trever/index.html',
           '_layouts/**',
-          '_posts/**',
+          '_posts/*.md',
           '_includes/**',
           'scss/**/*.scss',
           'assets/**'
