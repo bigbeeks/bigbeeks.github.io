@@ -32,14 +32,14 @@ prose:
   media: 'assets/images'
   metadata:
     _posts:
-      # - name: "layout"
-      #   field:
-      #     element: "hidden"
-      #     value: "post"
-      # - name: "title"
-      #   field:
-      #     element: "hidden"
-      #     value: ""
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "hidden"
+          value: ""
       - name: "date"
         field:
             element: "text"
